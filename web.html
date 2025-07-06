@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Juan Hernandez Olmos - Interactive CV</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f8fafc;
+            color: #1e293b;
+        }
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -30px;
+            top: 0;
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            background-color: #3b82f6;
+            border: 4px solid #f8fafc;
+        }
+        .timeline-line {
+            position: absolute;
+            left: -21px;
+            top: 20px;
+            width: 2px;
+            height: calc(100% - 20px);
+            background-color: #d1d5db;
+        }
+         .modal-overlay {
+            transition: opacity 0.3s ease;
+        }
+        .modal-content {
+            transition: transform 0.3s ease;
+        }
+    </style>
+</head>
+<body class="antialiased">
+
+    <div class="container mx-auto p-4 sm:p-8 max-w-6xl">
+        <!-- Header Section -->
+        <header class="flex flex-col md:flex-row items-start md:items-center justify-between mb-12">
+            <div class="flex items-center mb-6 md:mb-0">
+                <img src="https://i.imgur.com/kQjW4j8.png" alt="Juan Hernandez Olmos" class="w-24 h-24 rounded-full mr-6 border-4 border-white shadow-lg">
+                <div>
+                    <h1 class="text-4xl font-bold text-slate-800">Juan Hernandez Olmos</h1>
+                    <p class="text-xl text-blue-600 font-medium">Business Process Manager - Salesforce</p>
+                </div>
+            </div>
+            <div class="text-sm text-slate-600 space-y-2 text-left md:text-right">
+                <a href="mailto:j.hernandezolmos@gmail.com" class="flex items-center justify-start md:justify-end gap-2 hover:text-blue-600">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+                    <span>j.hernandezolmos@gmail.com</span>
+                </a>
+                 <a href="tel:+34618498326" class="flex items-center justify-start md:justify-end gap-2 hover:text-blue-600">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+                    <span>(+34) 618 498 326</span>
+                </a>
+                <p class="flex items-center justify-start md:justify-end gap-2">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+                    <span>Herzogenaurach, Germany</span>
+                </p>
+                 <a href="https://www.linkedin.com/in/juanhernandezolmos" target="_blank" class="flex items-center justify-start md:justify-end gap-2 hover:text-blue-600">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
+                    <span>linkedin.com/in/juanhernandezolmos</span>
+                </a>
+                <a href="https://www.salesforce.com/trailblazer/juanhern" target="_blank" class="flex items-center justify-start md:justify-end gap-2 hover:text-blue-600">
+                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+                    <span>Salesforce Trailblazer Profile</span>
+                </a>
+            </div>
+        </header>
+
+        <!-- Main Content -->
+        <main class="grid grid-cols-1 lg:grid-cols-3 gap-12">
+            <!-- Left Column -->
+            <div class="lg:col-span-2">
+                <!-- About Me -->
+                <section id="about" class="mb-12">
+                    <h2 class="text-2xl font-bold border-b-2 border-blue-500 pb-2 mb-4">About Me</h2>
+                    <p class="text-slate-700 leading-relaxed">
+                        Experienced Business Processes Manager and Salesforce Administrator with a strong track record in automating workflows and improving CRM system capabilities. Expert in collaborating with stakeholders and development teams to deliver scalable solutions that increase productivity and drive business value. Passionate about introducing new ideas and technologies to continuously enhance processes and user experience.
+                    </p>
+                </section>
+
+                <!-- Work Experience -->
+                <section id="experience">
+                    <h2 class="text-2xl font-bold border-b-2 border-blue-500 pb-2 mb-6">Work Experience</h2>
+                    <div class="relative pl-8">
+                        <!-- Timeline items will be injected here by JS -->
+                    </div>
+                </section>
+            </div>
+
+            <!-- Right Column -->
+            <div class="space-y-12">
+                <!-- Skills -->
+                <section id="skills">
+                    <h2 class="text-2xl font-bold border-b-2 border-blue-500 pb-2 mb-4">Skills</h2>
+                    <div class="flex flex-wrap gap-2">
+                        <!-- Skills will be injected here by JS -->
+                    </div>
+                </section>
+
+                <!-- Portfolio Section -->
+                <section id="portfolio">
+                    <h2 class="text-2xl font-bold border-b-2 border-blue-500 pb-2 mb-4">Portfolio</h2>
+                    <div id="portfolio-items-container" class="space-y-4">
+                         <div id="tableau-portfolio-item" class="p-4 bg-white rounded-lg border border-slate-200 hover:shadow-xl hover:border-blue-500 transition-shadow duration-300 cursor-pointer group">
+                             <h3 class="font-bold text-lg text-slate-800 group-hover:text-blue-600">Padel Match Analysis</h3>
+                             <p class="text-md text-slate-600">Interactive Tableau Dashboard</p>
+                             <span class="text-sm text-blue-500 font-semibold mt-2 inline-block">View Dashboard &rarr;</span>
+                         </div>
+                    </div>
+                </section>
+
+                <!-- Education -->
+                <section id="education">
+                    <h2 class="text-2xl font-bold border-b-2 border-blue-500 pb-2 mb-4">Education</h2>
+                    <div class="space-y-4">
+                         <div>
+                            <h3 class="font-semibold text-slate-800">Engineering of Technology of Telecommunications</h3>
+                            <p class="text-sm text-slate-600">Universidad Carlos III de Madrid | Leganés, Madrid, Spain</p>
+                            <p class="text-sm text-slate-500">2014</p>
+                        </div>
+                        <div>
+                            <h3 class="font-semibold text-slate-800">Exchange Program</h3>
+                            <p class="text-sm text-slate-600">Universidad del Pais Vasco | Bilbao, Bizcaia, Spain</p>
+                            <p class="text-sm text-slate-500">Jan 2019 - Jul 2019</p>
+                        </div>
+                    </div>
+                </section>
+                
+                <!-- Certifications -->
+                <section id="certifications">
+                    <h2 class="text-2xl font-bold border-b-2 border-blue-500 pb-2 mb-4">Certifications & Courses</h2>
+                    <div class="space-y-4">
+                        <div>
+                            <h3 class="font-semibold text-slate-800">Salesforce Certified Platform Developer I</h3>
+                            <p class="text-sm text-slate-500">Issued: Feb 2021</p>
+                        </div>
+                        <div>
+                            <h3 class="font-semibold text-slate-800">Salesforce Certified Administrator</h3>
+                            <p class="text-sm text-slate-500">Issued: Jan 2022</p>
+                        </div>
+                         <div>
+                            <h3 class="font-semibold text-slate-800">SCRUM Master Course</h3>
+                            <p class="text-sm text-slate-500">Completed: Apr 2022</p>
+                        </div>
+                         <div>
+                            <h3 class="font-semibold text-slate-800">DEX 450 Course ISDI</h3>
+                            <p class="text-sm text-slate-500">Completed: Jan 2021</p>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </main>
+    </div>
+
+    <!-- Experience Modal -->
+    <div id="experience-modal" class="modal-overlay fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center p-4 hidden opacity-0">
+        <div class="modal-content bg-white rounded-lg shadow-2xl w-full max-w-2xl max-h-[90vh] overflow-y-auto p-8 transform scale-95">
+            <div class="flex justify-between items-center mb-4">
+                <h3 id="modal-title" class="text-2xl font-bold text-slate-800"></h3>
+                <button id="experience-modal-close" class="text-slate-500 hover:text-slate-800">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+                </button>
+            </div>
+            <div id="modal-body" class="text-slate-700"></div>
+        </div>
+    </div>
+
+    <!-- Portfolio Modal -->
+    <div id="portfolio-modal" class="modal-overlay fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center p-4 hidden opacity-0">
+        <div class="modal-content bg-white rounded-lg shadow-2xl w-full max-w-6xl h-[90vh] flex flex-col p-4 sm:p-6 transform scale-95">
+            <div class="flex justify-between items-center mb-4 flex-shrink-0">
+                <h3 class="text-2xl font-bold text-slate-800">Tableau: Padel Match Analysis</h3>
+                <button id="portfolio-modal-close" class="text-slate-500 hover:text-slate-800">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+                </button>
+            </div>
+            <div id="portfolio-modal-body" class="flex-grow overflow-auto relative">
+                <!-- Tableau embed code will go here -->
+            </div>
+        </div>
+    </div>
+
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const experienceData = [
+                {
+                    title: "Business Process Manager - Salesforce",
+                    company: "ebm-papst",
+                    location: "Mulfingen, Germany",
+                    date: "Oct 2023 - Present",
+                    description: "ebm-papst is a global leader in energy-efficient fans and motors, serving industries like HVAC, automotive, and electronics.",
+                    tasks: [
+                        "Act as the key interface between stakeholders and development team, ensuring clear communication of needs and priorities.",
+                        "Lead projects integrating Salesforce with third-party tools to enhance system capabilities.",
+                        "Head lead generation and management processes to optimize sales pipeline efficiency.",
+                        "Prioritize product backlog to maximize business value and manage project budgets.",
+                        "Utilize Salesforce reports and dashboards to support data-driven decisions.",
+                        "Implement proof of concepts (POCs) for Agentforce and Copilot Al tools to enhance CRM functionalities."
+                    ]
+                },
+                {
+                    title: "Salesforce Administrator",
+                    company: "Nilfisk",
+                    location: "Budapest, Hungary",
+                    date: "May 2022 - Oct 2023",
+                    description: "Danish Manufacturer of high end cleaning machines.",
+                    tasks: [
+                        "In charge of the development of new business requirements for Salesforce platform, on Service, Sales, Pardot, ServiceMax.",
+                        "Working on an Agile methodology, developing flows, process, LWC, HTML, reporting, data cleaning.",
+                        "Knowledge on SOQL, content document Creator S-Docs, CPQ, prospecting tools, data backup tools."
+                    ]
+                },
+                {
+                    title: "Salesforce Consultant",
+                    company: "Capgemini",
+                    location: "Madrid, Spain",
+                    date: "Sep 2020 - May 2022",
+                    description: "Two years experience working as Salesforce Consultant for multinational companies on Salesforce Field Service and E-commerce.",
+                    tasks: []
+                }
+            ];
+
+            const skillsData = [
+                "Salesforce", "Agile-JIRA", "SOQL", "Agentforce AI", "Process Automation",
+                "Communication & Stakeholder", "Collaboration", "Make", "Salesforce Field Service",
+                "E-commerce", "LWC", "HTML", "CPQ", "S-Docs"
+            ];
+
+            const experienceContainer = document.querySelector('#experience .relative');
+            const skillsContainer = document.querySelector('#skills .flex');
+            
+            // Populate Experience
+            experienceData.forEach((job, index) => {
+                const isLast = index === experienceData.length - 1;
+                const item = document.createElement('div');
+                item.className = 'timeline-item relative mb-8 cursor-pointer group';
+                item.innerHTML = `
+                    ${!isLast ? '<div class="timeline-line"></div>' : ''}
+                    <div class="p-4 bg-white rounded-lg border border-slate-200 hover:shadow-xl hover:border-blue-500 transition-shadow duration-300">
+                        <p class="text-sm text-slate-500">${job.date}</p>
+                        <h3 class="font-bold text-lg text-slate-800 group-hover:text-blue-600">${job.title}</h3>
+                        <p class="text-md text-slate-600">${job.company} - ${job.location}</p>
+                        <span class="text-sm text-blue-500 font-semibold mt-2 inline-block">View Details &rarr;</span>
+                    </div>
+                `;
+                item.addEventListener('click', () => {
+                    const modalTitle = document.querySelector('#experience-modal #modal-title');
+                    const modalBody = document.querySelector('#experience-modal #modal-body');
+                    
+                    modalTitle.textContent = `${job.title} at ${job.company}`;
+                    let bodyContent = `<p class="italic text-slate-600 mb-6">${job.description}</p>`;
+                    if(job.tasks.length > 0) {
+                        bodyContent += '<h4 class="font-semibold mb-2 text-slate-800">Achievements & Tasks:</h4>';
+                        bodyContent += '<ul class="list-disc list-inside space-y-2">';
+                        job.tasks.forEach(task => { bodyContent += `<li>${task}</li>`; });
+                        bodyContent += '</ul>';
+                    } else {
+                         bodyContent += '<p class="text-slate-500">Details for this role are summarized in other experiences.</p>';
+                    }
+                    modalBody.innerHTML = bodyContent;
+                    openModal('experience-modal');
+                });
+                experienceContainer.appendChild(item);
+            });
+
+            // Populate Skills
+            skillsData.forEach(skill => {
+                const tag = document.createElement('span');
+                tag.className = 'bg-blue-100 text-blue-800 text-sm font-medium px-3 py-1 rounded-full';
+                tag.textContent = skill;
+                skillsContainer.appendChild(tag);
+            });
+
+            // --- Modal Logic ---
+            const openModal = (modalId) => {
+                const modal = document.getElementById(modalId);
+                if (modal) {
+                    modal.classList.remove('hidden');
+                    setTimeout(() => {
+                        modal.classList.remove('opacity-0');
+                        modal.querySelector('.modal-content').classList.remove('scale-95');
+                    }, 10);
+                }
+            };
+
+            const closeModal = (modalId) => {
+                const modal = document.getElementById(modalId);
+                if (modal) {
+                    const modalContent = modal.querySelector('.modal-content');
+                    modalContent.classList.add('scale-95');
+                    modal.classList.add('opacity-0');
+                    setTimeout(() => {
+                        modal.classList.add('hidden');
+                        // Clear portfolio modal content on close to stop viz
+                        if(modalId === 'portfolio-modal') {
+                            document.getElementById('portfolio-modal-body').innerHTML = '';
+                        }
+                    }, 300);
+                }
+            };
+
+            // Experience Modal Listeners
+            document.getElementById('experience-modal-close').addEventListener('click', () => closeModal('experience-modal'));
+            document.getElementById('experience-modal').addEventListener('click', (e) => {
+                if (e.target.id === 'experience-modal') closeModal('experience-modal');
+            });
+
+            // Portfolio Modal Listeners
+            document.getElementById('portfolio-modal-close').addEventListener('click', () => closeModal('portfolio-modal'));
+            document.getElementById('portfolio-modal').addEventListener('click', (e) => {
+                if (e.target.id === 'portfolio-modal') closeModal('portfolio-modal');
+            });
+            
+            // Global Escape key listener
+            document.addEventListener('keydown', (e) => {
+                if (e.key === "Escape") {
+                    closeModal('experience-modal');
+                    closeModal('portfolio-modal');
+                }
+            });
+
+            // Tableau Item Click Listener
+            document.getElementById('tableau-portfolio-item').addEventListener('click', () => {
+                const modalBody = document.getElementById('portfolio-modal-body');
+                const tableauEmbedCode = `
+                    <div class='tableauPlaceholder' id='viz1751823379373' style='position: relative; width: 100%; height: 100%;'>
+                        <noscript><a href='#'><img alt='Dashboard 1 ' src='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Pa&#47;PadelStats&#47;Dashboard1&#47;1_rss.png' style='border: none' /></a></noscript>
+                        <object class='tableauViz' style='display:none; width: 100%; height: 100%;'>
+                            <param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' />
+                            <param name='embed_code_version' value='3' />
+                            <param name='site_root' value='' />
+                            <param name='name' value='PadelStats&#47;Dashboard1' />
+                            <param name='tabs' value='no' />
+                            <param name='toolbar' value='yes' />
+                            <param name='static_image' value='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Pa&#47;PadelStats&#47;Dashboard1&#47;1.png' />
+                            <param name='animate_transition' value='yes' />
+                            <param name='display_static_image' value='yes' />
+                            <param name='display_spinner' value='yes' />
+                            <param name='display_overlay' value='yes' />
+                            <param name='display_count' value='yes' />
+                            <param name='language' value='es-ES' />
+                        </object>
+                    </div>
+                    <script type='text/javascript'>
+                        var divElement = document.getElementById('viz1751823379373');
+                        var vizElement = divElement.getElementsByTagName('object')[0];
+                        vizElement.style.width='100%';
+                        vizElement.style.height=(divElement.offsetWidth*0.75)+'px';
+                        var scriptElement = document.createElement('script');
+                        scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';
+                        vizElement.parentNode.insertBefore(scriptElement, vizElement);
+                    <\/script>
+                `;
+                modalBody.innerHTML = tableauEmbedCode;
+                openModal('portfolio-modal');
+            });
+        });
+    </script>
+</body>
+</html>
